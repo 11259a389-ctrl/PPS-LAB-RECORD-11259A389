@@ -1,0 +1,97 @@
+AIM: 
+To write a C program to display student information and marks using structure and union, 
+and to demonstrate the difference between the two in terms of memory allocation and data storage. 
+ 
+ 
+ALGORITHM: 
+1. Start the program. 
+2. Define a structure StudentStruct with members: 
+ -> name (string) 
+ -> roll (integer) 
+ -> marks (float) 
+3. Define a union StudentUnion with the same members: 
+ -> name (string) 
+ -> roll (integer) 
+ -> marks (float) 
+4. Declare a structure variable s1 and a union variable u1. 
+5. For the structure: 
+ -> Read name, roll, and marks from the user. 
+ -> Display all three values. 
+6. For the union: 
+ -> Read name and display it. 
+ -> Read roll and display it (note: this overwrites the name). 
+ -> Read marks and display it (note: this overwrites the roll). 
+7. Explain that in a structure, all members have separate memory locations, 
+while in a union, all members share the same memory location. 
+8. Stop the program. 
+ 
+ 
+PROGRAM: 
+#include <stdio.h> 
+#include <string.h> 
+// Structure definition 
+struct StudentStruct { 
+char name[20]; 
+int roll; 
+float marks; 
+}; 
+// Union definition 
+union StudentUnion { 
+char name[20]; 
+int roll; 
+float marks; 
+}; 
+int main() { 
+struct StudentStruct s1; 
+union StudentUnion u1; 
+// Structure data input 
+printf("Enter details for Structure:\n"); 
+printf("Enter Name: "); 
+scanf("%s", s1.name); 
+printf("Enter Roll Number: "); 
+scanf("%d", &s1.roll); 
+printf("Enter Marks: "); 
+scanf("%f", &s1.marks); 
+// Display structure data 
+printf("\nStructure Data:\n"); 
+printf("Name: %s\n", s1.name); 
+printf("Roll Number: %d\n", s1.roll); 
+printf("Marks: %.2f\n", s1.marks); 
+// Union data input 
+printf("\nEnter details for Union:\n"); 
+printf("Enter Name: "); 
+scanf("%s", u1.name); 
+printf("Name from Union: %s\n", u1.name); 
+printf("Enter Roll Number: "); 
+scanf("%d", &u1.roll); 
+printf("Roll Number from Union: %d\n", u1.roll); 
+printf("Enter Marks: "); 
+scanf("%f", &u1.marks); 
+printf("Marks from Union: %.2f\n", u1.marks); 
+// Display memory sizes 
+printf("\nSize of Structure: %lu bytes", sizeof(s1)); 
+printf("\nSize of Union: %lu bytes\n", sizeof(u1)); 
+return 0; 
+} 
+ 
+ 
+ 
+SAMPLE OUTPUT: 
+Enter details for Structure: 
+Enter Name: Ram 
+Enter Roll Number: 101 
+Enter Marks: 89.5 
+Enter details for Union: 
+Enter Name: Sita 
+Enter Roll Number: 102 
+Enter Marks: 78.2 
+Structure Data: 
+Name: Ram 
+Roll Number: 101 
+Marks: 89.50 
+Enter details for Union: 
+Name from Union: Sita 
+Roll Number from Union: 102 
+Marks from Union: 78.20 
+Size of Structure: 28 bytes 
+Size of Union: 20 bytes
