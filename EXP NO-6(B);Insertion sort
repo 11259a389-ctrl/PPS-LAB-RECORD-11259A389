@@ -1,0 +1,53 @@
+AIM: 
+To write a C program to sort a list of elements in ascending order using the Insertion Sort 
+technique. 
+ 
+ 
+ALGORITHM: 
+1. Start the program. 
+2. Read the number of elements n. 
+3. Read n elements into the array arr[]. 
+4. For i = 1 to n-1: 
+ ->Set key = arr[i], j = i-1. 
+ ->While j >= 0 and arr[j] > key: 
+a. Move arr[j] to arr[j+1], decrement j. 
+ Place key in arr[j+1]. 
+5. Display the sorted array. 
+6. Stop the program. 
+ 
+ 
+PROGRAM: 
+#include <stdio.h> 
+int main() { 
+int arr[50], n, i, j, key; 
+printf("Enter number of elements: "); 
+scanf("%d", &n); 
+printf("Enter %d elements:\n", n); 
+for (i = 0; i < n; i++) { 
+scanf("%d", &arr[i]); 
+} 
+// Insertion Sort 
+for (i = 1; i < n; i++) { 
+key = arr[i]; 
+j = i - 1; 
+while (j >= 0 && arr[j] > key) { 
+arr[j + 1] = arr[j]; 
+j--; 
+} 
+arr[j + 1] = key; 
+} 
+printf("Sorted array (Ascending Order):\n"); 
+for (i = 0; i < n; i++) { 
+printf("%d ", arr[i]); 
+} 
+printf("\n"); 
+return 0; 
+} 
+ 
+ 
+SAMPLE OUTPUT 
+Enter number of elements: 6 
+Enter 6 elements: 
+5 2 9 1 5 6 
+Sorted array (Ascending Order): 
+1 2 5 5 6 9
