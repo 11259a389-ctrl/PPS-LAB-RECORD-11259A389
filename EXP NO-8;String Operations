@@ -1,0 +1,100 @@
+AIM: 
+To write a C program to perform string operations (copy, reverse, concatenate) using 
+menu-driven approach. 
+  
+ALGORITHM: 
+1. Start the program. 
+2. Display menu: 
+ a. String Copy 
+ b. String Reverse 
+ c. String Concatenate 
+ d. Exit 
+3. Read the user’s choice. 
+4. Perform the operation based on choice: 
+Copy: Use strcpy() to copy one string to another. 
+Reverse: Reverse string manually. 
+Concatenate: Use strcat() to append one string to another. 
+5. Repeat menu until user chooses exit. 
+6. Stop the program. 
+ 
+PROGRAM: 
+#include <stdio.h> 
+#include <string.h> 
+#include <stdlib.h> 
+int main() { 
+char str1[100], str2[100], result[100]; 
+int choice, i, len; 
+while (1) { 
+printf("\n--- String Operations Menu ---\n"); 
+printf("1. String Copy\n"); 
+printf("2. String Reverse\n"); 
+printf("3. String Concatenate\n"); 
+printf("4. Exit\n"); 
+printf("Enter your choice: "); 
+scanf("%d", &choice); 
+getchar(); // to clear newline from buffer 
+switch (choice) { 
+case 1: 
+printf("Enter a string: "); 
+gets(str1); 
+strcpy(result, str1); 
+printf("Copied string: %s\n", result); 
+break; 
+case 2: 
+printf("Enter a string: "); 
+gets(str1); 
+len = strlen(str1); 
+for (i = 0; i < len; i++) { 
+result[i] = str1[len - i - 1]; 
+} 
+result[len] = '\0'; 
+printf("Reversed string: %s\n", result); 
+break; 
+case 3: 
+printf("Enter first string: "); 
+gets(str1); 
+printf("Enter second string: "); 
+gets(str2); 
+strcpy(result, str1); 
+strcat(result, str2); 
+printf("Concatenated string: %s\n", result); 
+break; 
+case 4: 
+printf("Exiting program...\n"); 
+exit(0); 
+default: 
+printf("Invalid choice! Please try again.\n"); 
+} 
+} 
+return 0; 
+} 
+
+SAMPLE OUTPUT:
+--- String Operations Menu --- 
+1. String Copy 
+2. String Reverse 
+3. String Concatenate 
+4. Exit 
+Enter your choice: 1 
+Enter a string: Hello 
+Copied string: Hello 
+ --- String Operations Menu --- 
+1. String Copy 
+2. String Reverse 
+3. String Concatenate 
+4. Exit 
+Enter your choice: 2 
+Enter a string: OpenAI 
+Reversed string: IAnepO --- String Operations Menu --- 
+1. String Copy 
+2. String Reverse 
+3. String Concatenate 
+4. Exit 
+Enter your choice: 3 
+Enter first string: Good 
+Enter second string: Morning 
+Concatenated string: GoodMorning 
+Size of int: 4 bytes 
+Size of float: 4 bytes 
+Size of double: 8 bytes 
+Size of char: 1 byte
