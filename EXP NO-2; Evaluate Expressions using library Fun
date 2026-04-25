@@ -1,0 +1,35 @@
+AIM: 
+To write a C program to evaluate the expression using library functions in C 
+ 
+ALGORITHM: 
+1. Start the program. 
+2. Declare variables A, B, C and result as float. 
+3. Read the values of A, B, and C from the user. 
+4. Use the pow() function from <math.h> to compute A2A^2A2. 
+5. Substitute the values into the expression: 
+6. Display the result. 
+7. Stop the program. 
+ 
+ 
+PROGRAM: 
+#include <stdio.h> 
+#include <math.h> 
+int main() { 
+float A, B, C, result; 
+printf("Enter value of A: "); 
+scanf("%f", &A); 
+printf("Enter value of B: "); 
+scanf("%f", &B); 
+printf("Enter value of C: "); 
+scanf("%f", &C); 
+result = A + B + (2 * C) / (3 * A) + pow(A, 2) + (2 * B); 
+printf("The value of the expression is: %.2f\n", result); 
+return 0; 
+}
+ 
+
+SAMPLE OUTPUT: 
+Enter value of A: 2 
+Enter value of B: 3 
+Enter value of C: 6 
+The value of the expression is: 15.00
