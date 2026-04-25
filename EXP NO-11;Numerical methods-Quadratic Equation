@@ -1,0 +1,60 @@
+AIM: 
+To write a C program to solve a quadratic equation using the formula method from 
+numerical methods. 
+ 
+ 
+ALGORITHM: 
+1. Start the program. 
+2. Read the coefficients aaa, bbb, and ccc of the quadratic equation ax^2+bx+c=0 
+3. Calculate the discriminant: 
+      D =b^2-4ac
+4. If D>0: Roots are real and distinct: 
+     x1= (-b+√ D)/2a , x2= (-b-√ D)/2a
+5. If D=0: Roots are real and equal: 
+    x1 = x2 = -b/2a
+6. If D<0: Roots are complex: 
+    realpart = -b/2a, imgpart = √ -D/2a
+7. Display the roots according to the discriminant value. 
+8. Stop the program. 
+ 
+ 
+PROGRAM:  
+#include <stdio.h> 
+#include <math.h> 
+int main() { 
+float a, b, c, discriminant, realPart, imagPart, root1, root2; 
+printf("Enter coefficients a, b, and c: "); 
+scanf("%f %f %f", &a, &b, &c); 
+discriminant = b * b - 4 * a * c; 
+if (discriminant > 0) { 
+root1 = (-b + sqrt(discriminant)) / (2 * a); 
+root2 = (-b - sqrt(discriminant)) / (2 * a); 
+printf("Roots are real and distinct.\n"); 
+printf("Root1 = %.2f, Root2 = %.2f\n", root1, root2); 
+} 
+else if (discriminant == 0) { 
+root1 = root2 = -b / (2 * a); 
+printf("Roots are real and equal.\n"); 
+printf("Root1 = Root2 = %.2f\n", root1); 
+} 
+else { 
+realPart = -b / (2 * a); 
+imagPart = sqrt(-discriminant) / (2 * a); 
+printf("Roots are complex and imaginary.\n"); 
+printf("Root1 = %.2f + %.2fi, Root2 = %.2f - %.2fi\n", realPart, imagPart, realPart, 
+imagPart); 
+} 
+return 0; 
+} 
+ 
+ 
+SAMPLE OUTPUT: 
+Enter coefficients a, b, and c: 1 -3 2 
+Roots are real and distinct. 
+Root1 = 2.00, Root2 = 1.00 
+Enter coefficients a, b, and c: 1 -2 1 
+Roots are real and equal. 
+Root1 = Root2 = 1.00 
+Enter coefficients a, b, and c: 1 2 5 
+Roots are complex and imaginary. 
+Root1 = -1.00 + 2.00i, Root2 = -1.00 - 2.00i
