@@ -1,0 +1,24 @@
+AIM: 
+To write a C program to display the size of different basic data types in C. 
+ALGORITHM: 
+1. Start the program. 
+2. Declare variables of different data types: int, float, double, char. 
+3. Use the sizeof() operator to find the size of each data type. 
+4. Display the sizes using printf(). 
+5. Stop the program. 
+ 
+ 
+PROGRAM: 
+#include <stdio.h> 
+int main() { 
+printf("Size of int: %zu bytes\n", sizeof(int)); 
+printf("Size of float: %zu bytes\n", sizeof(float)); 
+printf("Size of double: %zu bytes\n", sizeof(double)); 
+printf("Size of char: %zu bytes\n", sizeof(char)); 
+return 0; 
+} 
+SAMPLE OUTPUT: 
+Size of int: 4 bytes 
+Size of float: 4 bytes 
+Size of double: 8 bytes 
+Size of char: 1 byte 
