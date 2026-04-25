@@ -1,0 +1,33 @@
+AIM: 
+To write a C program to find the sum of the first n natural numbers using for loop. 
+ 
+ 
+ALGORITHM: 
+1. Start the program. 
+2. Declare variables n, i, and sum. 
+3. Read the value of n from the user. 
+4. Initialize sum to 0. 
+5. Use a for loop from i = 1 to n and add each value of i to sum. 
+6. Display the result. 
+7. Stop the program. 
+ 
+ 
+PROGRAM: 
+#include <stdio.h> 
+int main() { 
+int n, i, sum = 0; 
+printf("Enter the value of n: "); 
+scanf("%d", &n); 
+for (i = 1; i <= n; i++) { 
+sum += i; 
+} 
+printf("Sum of series = %d\n", sum); 
+return 0; 
+} 
+ 
+ 
+SAMPLE OUTPUT: 
+ 
+ 
+Enter the value of n: 5 
+Sum of series = 15
