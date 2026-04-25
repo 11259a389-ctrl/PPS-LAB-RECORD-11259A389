@@ -1,0 +1,38 @@
+AIM: 
+To write a C program to calculate the area of a triangle using the formula: - √S(S-A)(S-B)(S-C) 
+where S =(A+B+C)/2;
+
+ALGORITHM: 
+1. Start the program. 
+2. Declare variables a, b, c for the sides of the triangle, s for semi-perimeter, and area for 
+storing the result. 
+3. Read the three sides of the triangle from the user. 
+4. Compute semi-perimeter: 
+5. Use the formula: 
+6. using sqrt() from <math.h>. 
+7. Display the area. 
+8. Stop the program. 
+ 
+ 
+PROGRAM: 
+#include <stdio.h> 
+#include <math.h> 
+int main() { 
+float a, b, c, s, area; 
+printf("Enter side a: "); 
+scanf("%f", &a); 
+printf("Enter side b: "); 
+scanf("%f", &b); 
+printf("Enter side c: "); 
+scanf("%f", &c); 
+s = (a + b + c) / 2; 
+area = sqrt(s * (s - a) * (s - b) * (s - c));  
+printf("Area of the triangle = %.2f\n", area); 
+return 0; 
+} 
+
+SAMPLE OUTPUT: 
+Enter side a: 5 
+Enter side b: 6 
+Enter side c: 7 
+Area of the triangle = 14.70
