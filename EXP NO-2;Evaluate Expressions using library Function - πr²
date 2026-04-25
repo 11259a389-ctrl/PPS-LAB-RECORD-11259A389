@@ -1,0 +1,29 @@
+AIM: 
+To write a C program to evaluate the expression πr² (area of a circle). 
+
+
+ALGORITHM: 
+1. Start the program. 
+2. Declare variables for radius and area (float type). 
+3. Read the radius value from the user. 
+4. Use the formula: 
+5. area=π×r×r 
+6. Display the calculated area. 
+7. Stop the program.
+
+PROGRAM: 
+#include <stdio.h> 
+#define PI 3.1416 
+int main() { 
+float radius, area; 
+printf("Enter radius: "); 
+scanf("%f", &radius); 
+area = PI * radius * radius; 
+printf("Area of the circle = %.2f\n", area); 
+return 0; 
+} 
+ 
+
+SAMPLE OTPUT: 
+Enter radius: 7 
+Area of the circle = 153.94
