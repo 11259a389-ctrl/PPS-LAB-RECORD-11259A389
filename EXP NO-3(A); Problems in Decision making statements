@@ -1,0 +1,38 @@
+AIM: 
+To write a C program to find the biggest among three numbers using decision-making 
+statements. 
+
+ALGORITHM: 
+1. Start the program. 
+2. Declare variables a, b, and c. 
+3. Read the three numbers from the user. 
+4. Compare the numbers using if-else statements: 
+ If a is greater than both b and c, then a is the biggest. 
+ Else if b is greater than both a and c, then b is the biggest. 
+ Else, c is the biggest. 
+5. Display the biggest number. 
+6. Stop the program. 
+
+
+PROGRAM 
+#include <stdio.h> 
+int main() { 
+int a, b, c; 
+printf("Enter three numbers: "); 
+scanf("%d %d %d", &a, &b, &c); 
+if (a >= b && a >= c) { 
+printf("%d is the biggest number.\n", a); 
+} 
+else if (b >= a && b >= c) { 
+printf("%d is the biggest number.\n", b); 
+} 
+else { 
+printf("%d is the biggest number.\n", c); 
+} 
+return 0; 
+} 
+
+
+SAMPLE OUTPUT: 
+Enter three numbers: 12 45 33
+45 is the biggest number
