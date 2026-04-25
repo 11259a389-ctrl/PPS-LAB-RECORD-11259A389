@@ -1,0 +1,40 @@
+AIM: 
+To write a C program to find the factorial of a given number using recursion. 
+ 
+ 
+ALGORITHM: 
+1. Start the program. 
+2. Define a recursive function factorial(n): 
+  -> If n is 0 or 1, return 1. 
+  -> Else, return n * factorial(n - 1). 
+3. In the main() function: 
+  -> Read an integer from the user. 
+  -> Call the factorial function with the entered number. 
+  -> Display the result. 
+4. Stop the program 
+ 
+ 
+PROGRAM: 
+#include <stdio.h> 
+int factorial(int n) { 
+if (n == 0 || n == 1) 
+return 1; // Base case 
+else 
+return n * factorial(n - 1); // Recursive case 
+} 
+int main() { 
+int num; 
+printf("Enter a number: "); 
+scanf("%d", &num); 
+if (num < 0) { 
+printf("Factorial is not defined for negative numbers.\n"); 
+} else { 
+printf("Factorial of %d = %d\n", num, factorial(num)); 
+} 
+return 0; 
+} 
+ 
+ 
+SAMPLE OUTPUT: 
+Enter a number: 5 
+Factorial of 5 = 120
