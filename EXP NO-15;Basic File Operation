@@ -1,0 +1,53 @@
+AIM: 
+To write a C program to perform basic file operations like creating a file, writing data to 
+it, reading data from it, and closing the file. 
+ 
+ 
+ALGORITHM: 
+1. Start the program. 
+2. Use fopen() to create or open a file in write mode. 
+3. Check if the file is opened successfully. 
+4. Write data to the file using fprintf() or fputs(). 
+5. Close the file using fclose(). 
+6. Reopen the file in read mode. 
+7. Read data from the file using fgets() or fscanf(). 
+8. Display the read data on the screen. 
+9. Close the file. 
+10. Stop the program. 
+ 
+ 
+PROGRAM: 
+#include <stdio.h> 
+int main() { 
+FILE *fp; 
+char str[100]; 
+// Create and open file in write mode 
+fp = fopen("sample.txt", "w"); 
+if (fp == NULL) { 
+printf("Error opening file!\n"); 
+return 1; 
+} 
+printf("Enter a string to write to file: "); 
+fgets(str, sizeof(str), stdin); 
+// Write string to file 
+fputs(str, fp); 
+fclose(fp); 
+// Open file in read mode 
+fp = fopen("sample.txt", "r"); 
+if (fp == NULL) { 
+printf("Error opening file!\n"); 
+return 1; 
+} 
+printf("Content of the file:\n"); 
+while (fgets(str, sizeof(str), fp) != NULL) { 
+printf("%s", str); 
+} 
+fclose(fp); 
+return 0; 
+} 
+ 
+ 
+SAMPLE OUTPUT: 
+Enter a string to write to file: Hello, this is a sample file. 
+Content of the file: 
+Hello, this is a sample file.
