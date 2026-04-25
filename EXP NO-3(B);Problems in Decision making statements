@@ -1,0 +1,34 @@
+AIM: 
+To write a C program to check whether a given number is even or odd. 
+
+ALGORITHM: 
+1. Start the program. 
+2. Declare an integer variable num. 
+3. Read a number from the user. 
+4. Use the modulus operator % to find the remainder when num is divided by 2. 
+5. If the remainder is 0, the number is even. 
+6. Otherwise, the number is odd. 
+7. Display the result. 
+8. Stop the program. 
+ 
+ 
+PROGRAM: 
+#include <stdio.h> 
+int main() { 
+int num; 
+printf("Enter an integer: "); 
+scanf("%d", &num); 
+if (num % 2 == 0) { 
+printf("%d is Even.\n", num); 
+} else { 
+printf("%d is Odd.\n", num); 
+} 
+return 0; 
+} 
+ 
+ 
+SAMPLE OUTPUT: 
+Enter an integer: 7 
+7 is Odd. 
+Enter an integer: 12
+12 is Even.
